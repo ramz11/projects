@@ -16,8 +16,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="${contextroot}/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${contextroot}/assets/css/landing-page.css">
-    
+       
     ${additionalCss}
   </head>
 

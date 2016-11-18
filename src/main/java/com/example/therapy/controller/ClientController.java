@@ -34,7 +34,7 @@ public class ClientController {
 			redirectAttributes.addFlashAttribute("alertError", "Appointment booking failed. Please try again");
 		}
 		
-		redirectAttributes.addFlashAttribute("alertSuccess", "saved successfully");
+		redirectAttributes.addFlashAttribute("alertSuccess", "Saved successfully");
 		
 		return "redirect:/create-client";
 	}

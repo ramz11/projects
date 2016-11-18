@@ -1,6 +1,11 @@
 <#import "/template.ftl" as template/>
+<#import "/spring.ftl" as spring/>
 
-<@template.render>
+<#assign additionalCss>
+    <link rel="stylesheet" href="${contextroot}/assets/css/landing-page.css">
+</#assign>
+
+<@template.render additionalCss=additionalCss>
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">

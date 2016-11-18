@@ -1,6 +1,6 @@
 <#import "/spring.ftl" as spring/>
 <#global contextroot><@spring.url ''/></#global>
-<#macro render>
+<#macro render additionalCss="" additionalScripts="">
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,6 +17,8 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="${contextroot}/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="${contextroot}/assets/css/landing-page.css">
+    
+    ${additionalCss}
   </head>
 
   <body>
@@ -121,6 +123,9 @@
 
     <script src="${contextroot}/assets/js/jquery.min.js"></script>
     <script src="${contextroot}/assets/js/bootstrap.min.js"></script>
+
+    ${additionalScripts}
+    
   </body>
 </html>
 </#macro>

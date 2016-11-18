@@ -1,7 +1,22 @@
 <#import "/template.ftl" as template/>
 <#import "/spring.ftl" as spring/>
 
-<@template.render>
+<#assign additionalCss>
+    <link rel="stylesheet" href="${contextroot}/assets/css/bootstrap-datetimepicker.css">
+</#assign>
+
+<#assign additionalScripts>
+	<script src="${contextroot}/assets/js/moment-with-locales.js"></script>
+	<script src="${contextroot}/assets/js/bootstrap-datetimepicker.js"></script>
+
+	<script>
+		$(function () {
+			$('#startDateTime').datetimepicker();
+		});	
+	</script>
+</#assign>
+
+<@template.render additionalCss=additionalCss additionalScripts=additionalScripts>
  <div class="col-lg-12">
   <div class="well">
 	<form name="client" method="post" class="form-horizontal">

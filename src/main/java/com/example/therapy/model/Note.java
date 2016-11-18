@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
+@SuppressWarnings("serial")
 public class Note extends AbstractEntity{
 
 	@Length(min = 1, max = 256)
@@ -17,5 +18,5 @@ public class Note extends AbstractEntity{
 	public void setNote(String note) {
 		this.note = note;
 	}
-	
+
 }

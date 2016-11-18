@@ -10,20 +10,21 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
+@SuppressWarnings("serial")
 public class Client extends AbstractEntity {
 
 	@Length(min = 1, max = 256)
 	protected String firstname;
-	
+
 	@Length(min = 1, max = 256)
 	protected String lastname;
-	
+
 	@Email
 	protected String email;
-	
+
 	@Pattern(regexp="(^$|[0-9]{10})")
 	protected String phonenumber;
-	
+
 	@OneToMany
 	protected List<Note> notes;
 
@@ -66,5 +67,5 @@ public class Client extends AbstractEntity {
 	public void setNotes(List<Note> notes) {
 		this.notes = notes;
 	}
-	
+
 }

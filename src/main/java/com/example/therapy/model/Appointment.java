@@ -9,16 +9,17 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
 
 @Entity
+@SuppressWarnings("serial")
 public class Appointment extends AbstractEntity {
 
 	protected Calendar startDateTime;
-	
+
 	@Min(value = 0)
-	protected Integer durationMins; 
-	
+	protected Integer durationMins;
+
 	@ManyToOne
 	protected Client client;
-	
+
 	@OneToMany
 	protected List<Note> notes;
 
@@ -53,5 +54,5 @@ public class Appointment extends AbstractEntity {
 	public void setNotes(List<Note> notes) {
 		this.notes = notes;
 	}
-	
+
 }

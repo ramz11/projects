@@ -1,5 +1,6 @@
 package com.example.therapy.model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 import javax.persistence.GeneratedValue;
@@ -10,7 +11,8 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
 @MappedSuperclass
-public abstract class AbstractEntity {
+@SuppressWarnings("serial")
+public abstract class AbstractEntity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

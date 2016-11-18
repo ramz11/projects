@@ -31,6 +31,17 @@
 						<input type="text" name="email" class="form-control" placeholder="Email">
 					</div>
 				</div>
+			    <div class="form-group">
+				        <label class="col-lg-2 control-label" for="startDateTime">Date</label>
+					<div class="col-lg-10">
+				    	<div class='input-group date' id='startDateTime'>
+				        	<input type='text' class="form-control" />
+				        	<span class="input-group-addon">
+				                 <span class="glyphicon glyphicon-calendar"></span>
+				            </span>
+				        </div>
+				    </div>    
+				</div>   
 				<div class="form-group">
 					<div class="col-lg-10 col-lg-offset-2">
 						<button type="submit" class="btn btn-primary">Submit</button>

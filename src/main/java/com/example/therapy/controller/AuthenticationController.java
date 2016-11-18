@@ -28,7 +28,6 @@ public class AuthenticationController {
 		return "/sign-up";
 	}
 
-
 	@PostMapping("/sign-up")
 	public String signUp(@Valid User user, BindingResult bindingResult) {
 		LOGGER.debug("Processing sign-up form submission");

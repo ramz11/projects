@@ -35,6 +35,8 @@ public class User extends AbstractEntity {
 	@Column(nullable = false)
 	protected Boolean validated;
 
+	protected String comment;
+
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = { @JoinColumn(name = "role_id") })
 	protected Set<Role> roles;
@@ -109,6 +111,14 @@ public class User extends AbstractEntity {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 }

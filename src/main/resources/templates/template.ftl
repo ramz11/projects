@@ -29,7 +29,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Therapie</a>
+      <a class="navbar-brand" href="${contextroot}">Therapie</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -37,29 +37,54 @@
         <li class="active"><a href="/therapie">Acceuil<span class="sr-only">(current)</span></a></li>
         <li><a href="/therapie/create-client">Prendre un rendez-vous</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="${contextroot}/admin-login">Login</a></li>
-      </ul>
-    </div>
+      
+			<#if principal??>
+				<#assign name><#if principal.firstname?? && principal.lastname??>${principal.firstname} ${principal.lastname}<#else/>${principal.username}</#if></#assign>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> <span class="caret"/></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a>Signed in as <strong>${name}</strong></a></li>
+							<li class="divider"/>
+							<li><a href="${contextroot}/auth/profile">Your profile</a></li>
+							<li><a href="${contextroot}/help">Help</a></li>
+							<li class="divider"/>
+							<li><a href="${contextroot}/logout">Sign out</a></li>
+						</ul>
+					</li>
+				</ul>
+			<#else/>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="${contextroot}/admin-login">Sign in</a></li>
+				</ul>
+			</#if>
+		</div>
+
   </div>
 </nav>
 
 		<div class="container">
-		<#if alertSuccess??>
-		  <div class="row">
-		    <div class="col-lg-12">
-		    	<div class="alert alert-success">${alertSuccess}</div>	
-		    </div>
-		   </div>
-		  </#if>
-
-		<#if alertError??>
-		  <div class="row">
-		    <div class="col-lg-12">
-		    	<div class="alert alert-danger">${alertError}</div>	
-		    </div>
-		   </div>
-		  </#if>
+			<#if alertSuccess??>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="alert alert-dismissible alert-success">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							${alertSuccess}
+						</div>
+					</div>
+				</div>
+			</#if>
+			
+			<#if alertError??>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="alert alert-dismissible alert-danger">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							${alertError}
+						</div>
+					</div>
+				</div>
+			</#if>
 
 			<main class="row">
 		  		<#nested/>
@@ -94,7 +119,7 @@
     </footer>
 		</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="${contextroot}/assets/js/jquery.min.js"></script>
     <script src="${contextroot}/assets/js/bootstrap.min.js"></script>
   </body>
 </html>

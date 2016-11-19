@@ -22,14 +22,16 @@ public class DefaultUserService implements UserService {
 	}
 
 	@Override
-	public void create(String username, String password) {
-		final User user = new User();
-		user.setUsername(username);
-		user.setPassword(passwordEncoder.encode(password));
+	public void create(User user) {
+		final User newUser = new User();
+		newUser.setFirstname(user.getFirstname());
+		newUser.setLastname(user.getLastname());
+		newUser.setUsername(user.getUsername());
+		newUser.setPassword(passwordEncoder.encode(user.getPassword()));
 
-		LOGGER.debug("Saving user [{}] to data store", username);
-		final User savedUser = userRepository.save(user);
-		LOGGER.debug("Successfully saved user; username=[{}], id=[{}]", username, savedUser.getId());
+		LOGGER.debug("Saving user [{}] to data store", user.getUsername());
+		final User savedUser = userRepository.save(newUser);
+		LOGGER.debug("Successfully saved user; username=[{}], id=[{}]", user.getUsername(), savedUser.getId());
 	}
 
 	@Override

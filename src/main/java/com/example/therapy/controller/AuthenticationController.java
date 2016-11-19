@@ -53,7 +53,7 @@ public class AuthenticationController {
 		}
 
 		LOGGER.debug("Submitted sign-up form passed validation checks, saving user...");
-		userService.create(user.getUsername(), user.getPassword());
+		userService.create(user);
 
 		LOGGER.debug("User successfully created, performing post-creation sign-in...");
 		authenticateUser(user, request);

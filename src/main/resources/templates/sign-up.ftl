@@ -7,11 +7,21 @@
 			<fieldset>
 				<legend>Create your personal account</legend>
 				
+				<@bootstrap.formInput path="user.firstname"
+						label="First name"
+						placeholder="Enter your first name"
+						attributes="required"/>
+				
+				<@bootstrap.formInput path="user.lastname"
+						label="Last name"
+						placeholder="Enter your last name"
+						attributes="required"/>
+
 				<@bootstrap.formInput path="user.username"
 						label="Email"
 						placeholder="Enter your email"
 						attributes="required"/>
-				
+
 				<@bootstrap.formPasswordInput path="user.password"
 						label="Password"
 						placeholder="Choose a password"

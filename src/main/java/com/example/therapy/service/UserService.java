@@ -1,8 +1,10 @@
 package com.example.therapy.service;
 
+import com.example.therapy.model.User;
+
 public interface UserService {
 
-	void create(String username, String password);
+	void create(User user);
 
 	boolean exists(String username);
 

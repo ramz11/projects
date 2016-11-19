@@ -20,9 +20,9 @@ public class DefaultUserService implements UserService {
 		this.userRepository = userRepository;
 		this.passwordEncoder = passwordEncoder;
 	}
-	
+
 	@Override
-	public void create(User user) {
+	public User create(User user) {
 		final User newUser = new User();
 		newUser.setFirstname(user.getFirstname());
 		newUser.setLastname(user.getLastname());
@@ -32,6 +32,8 @@ public class DefaultUserService implements UserService {
 		LOGGER.debug("Saving user [{}] to data store", user.getUsername());
 		final User savedUser = userRepository.save(newUser);
 		LOGGER.debug("Successfully saved user; username=[{}], id=[{}]", user.getUsername(), savedUser.getId());
+
+		return user;
 	}
 
 	@Override

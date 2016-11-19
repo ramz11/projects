@@ -4,7 +4,7 @@ import com.example.therapy.model.User;
 
 public interface UserService {
 
-	void create(User user);
+	User create(User user);
 
 	boolean exists(String username);
 

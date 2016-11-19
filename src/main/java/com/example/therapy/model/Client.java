@@ -1,6 +1,7 @@
 package com.example.therapy.model;
 
-import java.util.List;
+import java.util.Collections;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -26,7 +27,7 @@ public class Client extends AbstractEntity {
 	protected String phonenumber;
 
 	@OneToMany
-	protected List<Note> notes;
+	protected Set<Note> notes = Collections.emptySet();
 
 	public String getFirstname() {
 		return firstname;
@@ -60,11 +61,11 @@ public class Client extends AbstractEntity {
 		this.phonenumber = phonenumber;
 	}
 
-	public List<Note> getNotes() {
+	public Set<Note> getNotes() {
 		return notes;
 	}
 
-	public void setNotes(List<Note> notes) {
+	public void setNotes(Set<Note> notes) {
 		this.notes = notes;
 	}
 

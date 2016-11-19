@@ -1,6 +1,6 @@
 <#import "/spring.ftl" as spring/>
 <#global contextroot><@spring.url ''/></#global>
-<#macro render additionalCss="" additionalScripts="">
+<#macro render windowtitle="Therapie" additionalCss="" additionalScripts="">
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,11 +12,10 @@
     <meta name="author" content="">
     <link rel="icon" href="${contextroot}/assets/favicon.ico">
 
-    <title>Therapie</title>
+    <title>${windowtitle}</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="${contextroot}/assets/css/bootstrap.min.css">
-       
     ${additionalCss}
   </head>
 
@@ -56,7 +55,8 @@
 				</ul>
 			<#else/>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="${contextroot}/admin-login">Sign in</a></li>
+					<li><a href="${contextroot}/admin-login">Sign in</a></li>
+					<li class="active"><a href="${contextroot}/sign-up">Sign up</a></li>
 				</ul>
 			</#if>
 		</div>

@@ -1,5 +1,6 @@
 package com.example.therapy.model;
 
+import java.util.Collections;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -15,7 +16,7 @@ public class Role extends AbstractEntity {
 	protected String role;
 
 	@ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
-	protected Set<User> users;
+	protected Set<User> users = Collections.emptySet();
 
 	public String getRole() {
 		return role;

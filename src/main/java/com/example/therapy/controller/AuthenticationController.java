@@ -1,10 +1,16 @@
 package com.example.therapy.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,6 +27,9 @@ public class AuthenticationController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AuthenticationController.class);
 
 	@Autowired
+	protected AuthenticationManager authenticationManager;
+
+	@Autowired
 	private UserService userService;
 
 	@GetMapping("/sign-up")
@@ -29,7 +38,7 @@ public class AuthenticationController {
 	}
 
 	@PostMapping("/sign-up")
-	public String signUp(@Valid User user, BindingResult bindingResult) {
+	public String signUp(@Valid User user, BindingResult bindingResult, HttpServletRequest request) {
 		LOGGER.debug("Processing sign-up form submission");
 
 		if (bindingResult.hasErrors()) {
@@ -39,15 +48,18 @@ public class AuthenticationController {
 
 		if (userService.exists(user.getUsername()) == true) {
 			LOGGER.debug("User [{}] already exists", user.getUsername());
-			bindingResult.rejectValue("username", "signup.username.alreadyregistered");
+			bindingResult.rejectValue("username", "signup.username.alreadyregistered", "A user with this email already exists.");
 			return "/sign-up";
 		}
 
 		LOGGER.debug("Submitted sign-up form passed validation checks, saving user...");
 		userService.create(user.getUsername(), user.getPassword());
 
-		LOGGER.debug("Redirecting user to /sign-up");
-		return "redirect:/sign-up";
+		LOGGER.debug("User successfully created, performing post-creation sign-in...");
+		authenticateUser(user, request);
+
+		LOGGER.debug("Redirecting to /");
+		return "redirect:/";
 	}
 
 
@@ -58,4 +70,11 @@ public class AuthenticationController {
 		return "/admin-login";
 	}
 
+	protected void authenticateUser(User user, HttpServletRequest request) {
+		final UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
+		authenticationToken.setDetails(new WebAuthenticationDetails(request));
+		final Authentication authentication = authenticationManager.authenticate(authenticationToken);
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+	}
+	
 }

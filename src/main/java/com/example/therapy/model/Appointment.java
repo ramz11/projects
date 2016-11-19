@@ -1,7 +1,8 @@
 package com.example.therapy.model;
 
 import java.util.Calendar;
-import java.util.List;
+import java.util.Collections;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -21,7 +22,7 @@ public class Appointment extends AbstractEntity {
 	protected Client client;
 
 	@OneToMany
-	protected List<Note> notes;
+	protected Set<Note> notes = Collections.emptySet();
 
 	public Client getClient() {
 		return client;
@@ -47,11 +48,11 @@ public class Appointment extends AbstractEntity {
 		this.durationMins = durationMins;
 	}
 
-	public List<Note> getNotes() {
+	public Set<Note> getNotes() {
 		return notes;
 	}
 
-	public void setNotes(List<Note> notes) {
+	public void setNotes(Set<Note> notes) {
 		this.notes = notes;
 	}
 

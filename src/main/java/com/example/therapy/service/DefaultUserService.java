@@ -20,7 +20,7 @@ public class DefaultUserService implements UserService {
 		this.userRepository = userRepository;
 		this.passwordEncoder = passwordEncoder;
 	}
-
+	
 	@Override
 	public void create(User user) {
 		final User newUser = new User();

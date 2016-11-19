@@ -12,20 +12,20 @@ import com.example.therapy.model.Client;
 import com.example.therapy.repository.ClientRepository;
 
 @Controller
-public class ClientController {
+public class ContactUsController {
 	
 	@Autowired
 	protected ClientRepository clientRepository;
 	
-	@GetMapping("/create-client")
+	@GetMapping("/contact-us")
 	public String createClientForm(Model model) {
 		Client client = clientRepository.findOne(1L);
 		if (client == null) client = new Client();
 		model.addAttribute(client);
-		return "/add-client";
+		return "/contact-us";
 	}
 	
-	@PostMapping("/create-client")
+	@PostMapping("/contact-us")
 	public String createClientHandler(@ModelAttribute Client client, RedirectAttributes redirectAttributes) {
 		
 		try {
@@ -36,7 +36,7 @@ public class ClientController {
 		
 		redirectAttributes.addFlashAttribute("alertSuccess", "Saved successfully");
 		
-		return "redirect:/create-client";
+		return "redirect:/contact-us";
 	}
 
 }

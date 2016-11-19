@@ -35,7 +35,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/therapie">Acceuil<span class="sr-only">(current)</span></a></li>
-        <li><a href="/therapie/create-client">Prendre un rendez-vous</a></li>
+        <li><a href="/therapie/contact-us">Nous joindres</a></li>
       </ul>
       
 			<#if principal??>
@@ -110,7 +110,7 @@
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#contact">Nous joindres</a>
+                            <a href="/therapie/contact-us">Nous joindres</a>
                         </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; Your Company 2016. All Rights Reserved</p>

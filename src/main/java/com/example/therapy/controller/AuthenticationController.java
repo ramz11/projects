@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.therapy.event.SignupCompleteEvent;
 import com.example.therapy.model.User;
 import com.example.therapy.service.UserService;
 
@@ -25,6 +27,9 @@ import com.example.therapy.service.UserService;
 public class AuthenticationController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AuthenticationController.class);
+
+	@Autowired
+	protected ApplicationEventPublisher applicationEventPublisher;
 
 	@Autowired
 	protected AuthenticationManager authenticationManager;
@@ -53,7 +58,16 @@ public class AuthenticationController {
 		}
 
 		LOGGER.debug("Submitted sign-up form passed validation checks, saving user...");
-		userService.create(user);
+		final User createdUser = userService.create(user);
+
+		if (createdUser == null) {
+			LOGGER.debug("User [{}] already exists", user.getUsername());
+			bindingResult.reject("signup.error", "Error creating user; please try again.");
+			return "/sign-up";
+		}
+
+		LOGGER.debug("Sending signup complete event");
+		applicationEventPublisher.publishEvent(new SignupCompleteEvent(createdUser));
 
 		LOGGER.debug("User successfully created, performing post-creation sign-in...");
 		authenticateUser(user, request);
@@ -76,5 +90,5 @@ public class AuthenticationController {
 		final Authentication authentication = authenticationManager.authenticate(authenticationToken);
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 	}
-	
+
 }

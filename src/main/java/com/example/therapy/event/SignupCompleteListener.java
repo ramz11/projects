@@ -27,6 +27,7 @@ public class SignupCompleteListener implements ApplicationListener<SignupComplet
 
 		final SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 		simpleMailMessage.setTo(user.getUsername());
+		simpleMailMessage.setFrom("example@example.com");
 		simpleMailMessage.setSubject("Therapie - confirm registration");
 		simpleMailMessage.setText("Successfully registered.. here's your confirmation token: " + token);
 		javaMailSender.send(simpleMailMessage);

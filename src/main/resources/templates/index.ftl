@@ -6,6 +6,9 @@
 </#assign>
 
 <@template.render additionalCss=additionalCss>
+
+<h1><@spring.message "lang"/></h1>
+
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">

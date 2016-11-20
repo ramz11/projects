@@ -98,7 +98,7 @@
                 <div class="col-lg-12">
                     <ul class="list-inline">
                         <li>
-                            <a href="#">Acceuil</a>
+                            <a href="${contextroot}/">Acceuil</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>

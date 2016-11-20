@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="${contextroot}/">Therapie</a>
+      <a class="navbar-brand" href="${contextroot}/"><@spring.message "nav-bar.brand"/></a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

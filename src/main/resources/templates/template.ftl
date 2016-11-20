@@ -1,5 +1,6 @@
 <#import "/spring.ftl" as spring/>
 <#global contextroot><@spring.url ''/></#global>
+<#assign togglelang><@spring.message "toggle-language"/></#assign>
 <#macro render windowtitle="Therapie" additionalCss="" additionalScripts="">
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +37,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="${contextroot}/">Acceuil<span class="sr-only">(current)</span></a></li>
         <li><a href="${contextroot}/contact-us">Nous joindres</a></li>
+        <li><a href="?locale=${togglelang}">change language</a></li>
       </ul>
       
 			<#if principal??>

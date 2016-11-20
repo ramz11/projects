@@ -1,5 +1,7 @@
 package com.example.therapy;
 
+import java.util.Locale;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -9,8 +11,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import com.example.therapy.event.SignupCompleteEvent;
 import com.example.therapy.event.SignupCompleteListener;
@@ -31,6 +36,7 @@ public class TherapyApplication extends WebMvcConfigurerAdapter {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(securityPrincipalInterceptor());
+		registry.addInterceptor(localeChangeInterceptor());
 	}
 
 	@Bean
@@ -51,6 +57,18 @@ public class TherapyApplication extends WebMvcConfigurerAdapter {
 	@Bean
 	public ApplicationListener<SignupCompleteEvent> signupCompleteListener() {
 		return new SignupCompleteListener();
+	}
+
+	@Bean
+	public LocaleResolver localeResolver() {
+		final SessionLocaleResolver localeResolver = new SessionLocaleResolver();
+		localeResolver.setDefaultLocale(Locale.FRENCH);
+		return localeResolver;
+	}
+
+	@Bean
+	public HandlerInterceptor localeChangeInterceptor() {
+		return new LocaleChangeInterceptor();
 	}
 
 }

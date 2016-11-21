@@ -13,23 +13,23 @@
 						attributes="required"/>
 				
 				<@bootstrap.formInput path="user.lastname"
-						label="Last name"
-						placeholder="Enter your last name"
+						label="sign-up.lastname.label"
+						placeholder="sign-up.lastname.placeholder"
 						attributes="required"/>
 
 				<@bootstrap.formInput path="user.username"
-						label="Email"
-						placeholder="Enter your email"
+						label="sign-up.email.label"
+						placeholder="sign-up.email.placeholder"
 						attributes="required"/>
 
 				<@bootstrap.formPasswordInput path="user.password"
-						label="Password"
-						placeholder="Choose a password"
+						label="sign-up.password.label"
+						placeholder="sign-up.password.placeholder"
 						attributes="required"/>
 
 				<@bootstrap.formPasswordInput path="user.passwordMatch"
-						label="Confirm password"
-						placeholder="Re-enter your password"
+						label="sign-up.password-match.label"
+						placeholder="sign-up.password-match.placeholder"
 						attributes="required"/>
 
 				<p>

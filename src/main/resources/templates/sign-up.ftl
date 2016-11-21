@@ -8,7 +8,7 @@
 				<legend>Create your personal account</legend>
 				
 				<@bootstrap.formInput path="user.firstname"
-						label="First name"
+						label="${rc.getMessage('sign-up.firstname.label')}"
 						placeholder="Enter your first name"
 						attributes="required"/>
 				

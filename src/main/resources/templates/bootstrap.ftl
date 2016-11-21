@@ -5,10 +5,10 @@
 	<#assign id = spring.status.expression?replace('[','')?replace(']','')/>
 	<#assign error><#if spring.status.error>has-error</#if></#assign>
 	<div class="form-group ${error}">
-		<label class="control-label" for="${id}">${label}</label>
+		<label class="control-label" for="${id}"><@spring.message label/></label>
 		<input class="form-control" type="${fieldType}" id="${id}"
 				name="${spring.status.expression}" value="${spring.stringStatusValue}"
-				<#if placeholder??>placeholder="${placeholder}"</#if> ${attributes}/>
+				<#if placeholder??>placeholder="<@spring.message placeholder/>"</#if> ${attributes}/>
 		<#if error??><span class="help-block">${spring.status.errorMessage}</span></#if>
 	</div>
 </#macro>

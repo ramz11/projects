@@ -6,7 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -69,6 +71,15 @@ public class TherapyApplication extends WebMvcConfigurerAdapter {
 	@Bean
 	public HandlerInterceptor localeChangeInterceptor() {
 		return new LocaleChangeInterceptor();
+	}
+
+	@Bean
+	public MessageSource messageSource() {
+		final ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+		messageSource.setBasenames("messages");
+		messageSource.setDefaultEncoding("UTF-8");
+		messageSource.setUseCodeAsDefaultMessage(true);
+		return messageSource;
 	}
 
 }

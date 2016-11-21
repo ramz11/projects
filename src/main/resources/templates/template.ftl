@@ -35,9 +35,8 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="${contextroot}/">Acceuil<span class="sr-only">(current)</span></a></li>
-        <li><a href="${contextroot}/contact-us">Nous joindres</a></li>
-        <li><a href="?locale=${togglelang}">change language</a></li>
+        <li class="active"><a href="${contextroot}/"><@spring.message "nav-bar.home-link"/><span class="sr-only">(current)</span></a></li>
+        <li><a href="${contextroot}/contact-us"><@spring.message "nav-bar.contact-us"/></a></li>
       </ul>
       
 			<#if principal??>
@@ -51,14 +50,15 @@
 							<li><a href="${contextroot}/auth/profile">Your profile</a></li>
 							<li><a href="${contextroot}/help">Help</a></li>
 							<li class="divider"/>
-							<li><a href="${contextroot}/logout">Sign out</a></li>
+							<li><a href="${contextroot}/logout"><@spring.message "nav-bar.sign-out"/></a></li>
 						</ul>
 					</li>
 				</ul>
 			<#else/>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="${contextroot}/admin-login">Sign in</a></li>
-					<li class="active"><a href="${contextroot}/sign-up">Sign up</a></li>
+					<li><a href="${contextroot}/admin-login"><@spring.message "nav-bar.sign-in"/></a></li>
+					<li class="active"><a href="${contextroot}/sign-up"><@spring.message "nav-bar.sign-up"/></a></li>
+					<li><a href="?locale=${togglelang}"><@spring.message "language"/></a></li>
 				</ul>
 			</#if>
 		</div>
@@ -100,22 +100,22 @@
                 <div class="col-lg-12">
                     <ul class="list-inline">
                         <li>
-                            <a href="${contextroot}/">Acceuil</a>
+                            <a href="${contextroot}/"><@spring.message "footer.home-link"/></a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">Information</a>
+                            <a href="#about"><@spring.message "footer.info"/></a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Services</a>
+                            <a href="#services"><@spring.message "footer.services"/></a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="/therapie/contact-us">Nous joindres</a>
+                            <a href="/therapie/contact-us"><@spring.message "footer.contact-us"/></a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2016. All Rights Reserved</p>
+                    <p class="copyright text-muted small"><@spring.message "footer.copyright"/></p>
                 </div>
             </div>
         </div>

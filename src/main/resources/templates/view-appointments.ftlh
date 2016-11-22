@@ -1,5 +1,5 @@
 <#import "/spring.ftl" as spring/>
-<#import "/template.ftl" as template/>
+<#import "/template.ftlh" as template/>
 
 <@template.render>
 

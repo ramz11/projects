@@ -1,6 +1,6 @@
-<#import "/bootstrap.ftl" as bootstrap/>
+<#import "/bootstrap.ftlh" as bootstrap/>
 <#import "/spring.ftl" as spring/>
-<#import "/template.ftl" as template/>
+<#import "/template.ftlh" as template/>
 <@template.render>
 	<div class="well">
 		<form name="user" method="post">

@@ -1,4 +1,4 @@
-<#import "/template.ftl" as template/>
+<#import "/template.ftlh" as template/>
 <#import "/spring.ftl" as spring/>
 
 <#assign additionalCss>

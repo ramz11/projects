@@ -1,4 +1,4 @@
-<#import "/template.ftl" as template/>
+<#import "/template.ftlh" as template/>
 <#import "/spring.ftl" as spring/>
 
 <#assign additionalCss>
@@ -6,7 +6,6 @@
 </#assign>
 
 <@template.render additionalCss=additionalCss>
-
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">

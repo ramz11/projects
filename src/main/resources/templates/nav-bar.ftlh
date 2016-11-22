@@ -36,7 +36,7 @@
 				</ul>
 			<#else/>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="${contextroot}/admin-login"><@spring.message "nav-bar.sign-in"/></a></li>
+					<li><a href="#" data-toggle="modal" data-target="#signin"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i><@spring.message "nav-bar.sign-in"/></a></li>
 					<li class="active"><a href="${contextroot}/sign-up"><@spring.message "nav-bar.sign-up"/></a></li>
 					<li><a href="?locale=${togglelang}"><@spring.message "language"/></a></li>
 				</ul>

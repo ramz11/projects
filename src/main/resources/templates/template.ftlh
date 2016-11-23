@@ -23,7 +23,7 @@
   <body>
   
 	<#include "nav-bar.ftlh"/>
-	<#include "admin-login.ftlh"/>
+	<#include "admin-login-modal.ftlh"/>
 		<div class="container">
 			<#if alertSuccess??>
 				<div class="row">

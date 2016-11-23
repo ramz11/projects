@@ -2,7 +2,11 @@
 
 	<div class="col-lg-12">
  		<div class="well">
-			<form method="post" class="form-horizontal">
+			<div class="modal fade" id="signin">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-body">
+			       <form method="post" class="form-horizontal">
 				<fieldset>
 					<legend>Administration login</legend>
 						<div class="form-group">
@@ -23,15 +27,19 @@
 							<label><input type="checkbox" name="remember-me" id="remember-me"> Remember me</label>
 						</div>
 
-						<hr class="col-lg-11 col-lg-offset-1"/>
-						
+				</fieldset>
+			</form>
+			      </div>
+			      <div class="modal-footer">
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
 								<button type="submit" class="btn btn-primary"><@spring.message "sign-in.login.button"/></button>
 								<a class="btn btn-link" href="${contextroot}"><@spring.message "sign-in.cancel.link"/></a>
 							</div>
 						</div>
-				</fieldset>
-			</form>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		</div>
 	</div>

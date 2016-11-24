@@ -1,5 +1,4 @@
 <#import "/spring.ftl" as spring/>
-
 	<div class="col-lg-12">
  		<div class="well">
 			<form method="post" class="form-horizontal">

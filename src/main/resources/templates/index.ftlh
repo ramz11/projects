@@ -19,11 +19,16 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+                    <h2 class="section-heading">L’approche non directive créatrice MD (ANDC)</h2>
+                    <p class="lead">Fondée par Colette Portelance  D. Sc. Éd., l’approche non directive créatrice (ANDC) est une approche thérapeutique humaniste inspirée par les travaux de Carl Roger,  
+                    de Georgi Lozanov ainsi que de la thérapie Gestalt.<br>
+                     Elle favorise chez l’aidé la connaissance de soi tout en l’emmenant à puiser en lui et créer ses propres ressources afin de vivre des relations plus satisfaisantes avec lui-même 
+                     ainsi que son entourage. Tel que le nom l’indique, c’est une approche non directive.  Donc, le thérapeute n’offre aucun conseil. Selon cette approche, 
+                     l’aidé détient en lui le potentiel et la capacité à puiser dans ses ressources les réponses qui lui conviennent le mieux. Ceci l’emmène à récupérer le pouvoir sur sa vie 
+                     et retrouver sa liberté. </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="${contextroot}/assets/img/ipad.png" alt="">
+                    <img class="img-responsive" src="${contextroot}/assets/img/side.jpg" alt="drawing of planet earth">
                 </div>
             </div>
 
@@ -38,11 +43,13 @@
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                    <h2 class="section-heading">Quel est le rôle du Thérapeute en relation d’aide</h2>
+                    <p class="lead">Le thérapeute offre une écoute empathique et respectueuse au rythme de l’aidé tout au long de son cheminement. Son rôle est de l’accompagner dans son vécu émotif dans l’ici et maintenant de la relation avec sensibilité,  sans aucune interprétation ni jugements. Chaque
+									 rencontre offre à l’aidé une expérience relationnelle saine et authentique dans un environnement de confidentialité et de respect. 
+									 Il offre un effet miroir en montrant objectivement à l’aidé son fonctionnement afin de favoriser une meilleur connaissance de soi. </p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="${contextroot}/assets/img/dog.png" alt="">
+                    <img class="img-responsive" src="${contextroot}/assets/img/picture1.png" alt="picture of butterflies">
                 </div>
             </div>
 
@@ -60,11 +67,15 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                    <h2 class="section-heading">Qui suis-je</h2>
+                    <p class="lead">Passionnée des relations humaines, j’ai commencé mon cheminement d’études en sciences sociales avec une spécialisation approfondie en psychologie.
+                     Par la suite, j’ai croisé sur mon chemin l’approche non directive créatrice qui m’a permis de déployer mon être et me créer en tant que thérapeute en relation d’aide avec ma propre 
+                     couleur. C’est avec beaucoup de sensibilité, de respect et en toute confidentialité qu’il me fera plaisir de vous accompagner dans tout ce que vous traversez dans le moment présent. 
+                     Tel qu’un papillon en pleine transformation dans son cocon,  suite aux efforts qu’il met en place afin de déchirer son cocon, il arrive à entrainer ses ailes. 
+                     C’est ce qui lui permet de prendre son vol. Tout cela pour dire que c’est un privilège pour moi de pouvoir être témoin de cette transformation et découvrir ce trésor qui se cache en vous. </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="${contextroot}/assets/img/phones.png" alt="">
+                    <img class="img-responsive" src="${contextroot}/assets/img/pic1.png" alt="picture of a butterfly">
                 </div>
             </div>
 
@@ -79,20 +90,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
+                    <h2</h2>
                 </div>
-                <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><span class="network-name">Github</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"> <span class="network-name">Linkedin</span></a>
-                        </li>
-                    </ul>
+                 <div class="col-lg-6">
+                   
+                </div>
                 </div>
             </div>
         </div>

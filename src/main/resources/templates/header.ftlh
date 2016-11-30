@@ -9,8 +9,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>Landing Page</h1>
-                        <h3>A Template by Start Bootstrap</h3>
+                        <h1>Marianne Abi-Samra</h1>
+                        <h3>Thérapeute en relation d’aide MD <br> par l’approche non directive créatrice MD</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
@@ -20,7 +20,7 @@
                                 <a href="http://www.csssgatineau.qc.ca/index.php?id=333" class="btn btn-default btn-lg"><span class="network-name">Centres santé Gatineau</span></a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-default btn-lg"><span class="network-name">Linkedin</span></a>
+                                <a href="http://citrac.ca/" class="btn btn-default btn-lg"><span class="network-name">CITRAC</span></a>
                             </li>
                         </ul>
                     </div>

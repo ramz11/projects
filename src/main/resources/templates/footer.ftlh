@@ -23,8 +23,10 @@
                             <a href="/therapie/contact-us"><@spring.message "footer.contact-us"/></a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small"><@spring.message "footer.copyright"/></p>
+                    <p class="copyright text-muted small"><@spring.message "footer.copyright"/> </p>
+                    <p class="copyright text-muted small">Secteur Gatineau <br>613-769-5902 <br>mabis051@gmail.com</p>
                 </div>
+               
             </div>
         </div>
     </footer>
